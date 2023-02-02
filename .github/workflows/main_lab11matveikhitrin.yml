@@ -34,7 +34,7 @@ jobs:
           path: .
 
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     needs: build
     environment:
       name: 'Production'
@@ -51,6 +51,5 @@ jobs:
         id: deploy-to-webapp
         with:
           app-name: 'lab11matveikhitrin'
-          slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_BF2843849800492F854101F92BFC5241 }}
           package: .
